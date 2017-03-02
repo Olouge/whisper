@@ -1,3 +1,148 @@
+# Sample API Function call
+```
+public function actionApitest() {
+/*
+
+Response vars
+
+genreplystatus
+-------------------- 
+values = 
+0 //No problems
+500 //Unknown error
+600 //credit finished
+700 //Contacts List supplied is empty
+800 //Internal server error
+900 //Wrong login
+
+minireplystatus
+---------------------
+values = 
+-11 //Not enough airtime
+-21 //No sender ID supplied
+
+balance
+-----------
+value = current balance airtime
+
+
+generalr
+----------
+values = String with a message associated with the transaction in general
+
+
+
+Contacts Based status
+======================
+Any other array element in the response is the status of each contacts sending transaction, for each contact, the returned array for that contact has the following fields
+
+record
+--------
+values = Serial number of the transaction queue
+
+contact
+----------
+value = associated contact number for this transaction
+
+returncode
+--------------
+In this section, any code different from one should be reported to the whisper team under help of the platform. A whisper expert will attend to you.
+
+values = 
+1 //message was sent successfully
+100 //The airtime got finished somehow when processing request for this contact
+404 //Wrong platform credentials
+0 //General network problem
+-500 //Slow or internet connection bandwidth too low
+Any other code means unknow error occurred
+
+*/
+     //sendsms code
+        //CURL
+        $url = 'http://whisper.ngtltd.com/index.php?r=site/apiwebsendmsg&';
+        $username = '+237670000000';
+        $password = md5('test');
+        $verification_code = rand(1000,9999);
+        $receiver = "670879560";//696449761
+        //$timeout=10;
+        $request = $url . "phoneNumber=" . urlencode($username) . "&Password=" . $password;
+        $request.="&msg=" . urlencode("Hello World: " . $verification_code) . "&237=" . urlencode($receiver);
+
+        $url = $request;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        //curl_setopt($ch, CURLOPT_POST, 1);
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        $response = json_decode($response);
+        foreach($response as $k){
+            if(isset($k->success))            
+                echo $k->success;
+            if(isset($k->genreplystatus))
+                echo $k->genreplystatus;
+            if(isset($k->minireplystatus))
+                echo $k->minireplystatus;
+            if(isset($k->balance))
+                echo $k->balance;
+            if(isset($k->generalreason))
+                echo $k->generalreason;
+            if(is_object($k) && isset($k->contact))
+                var_dump($k);
+        }
+
+        //additionally, you can do $k->contactnumber
+        exit;
+        //return $response;
+        
+        
+        
+        /*
+        
+        $url = 'http://whisper.ngtltd.com/index.php?r=site/apiwebsendmsg' ;
+
+        $verification_code = rand(1000,9999);
+        $phone = "670879560";
+
+        $fields = array(
+            'phoneNumber' => '+237670000000',
+            'Password'    => 'test',
+            'msg'         => "Hello World: " . $verification_code,
+            '237'         => $phone
+        ) ;
+
+        $fields_string = "" ;
+
+        //Now we url-ify the data in the array
+        foreach ($fields as $key => $value) {
+            $fields_string .= "&".$key . "=".$value ;
+        }
+
+        rtrim($fields_string,'&') ;
+        
+        
+        
+        //Open connection
+        $curl_connection = curl_init();
+
+        curl_setopt($curl_connection, CURLOPT_URL, $url) ;
+        curl_setopt($curl_connection, CURLOPT_POST, count($fields)) ;
+        curl_setopt($curl_connection, CURLOPT_POSTFIELDS, $fields_string) ;
+        
+        #var_dump($url);exit;
+        
+        //Call service to send message
+        $result = curl_exec($curl_connection) ;
+
+        var_dump($result);
+
+        curl_close($curl_connection) ;*/
+    }
+
+
+```
 # Documentation for WHISPER BULK SMS API
 ===============================================================
 
@@ -71,4 +216,59 @@ creditfinish = set only when airtime is finish
 Error = set when contact list is empty
 ise = set when API throws an error
 ``` 
+
+### Response vars
+
+genreplystatus
+-------------------- 
+values = 
+0 //No problems
+500 //Unknown error
+600 //credit finished
+700 //Contacts List supplied is empty
+800 //Internal server error
+900 //Wrong login
+
+minireplystatus
+---------------------
+values = 
+-11 //Not enough airtime
+-21 //No sender ID supplied
+
+balance
+-----------
+value = current balance airtime
+
+
+generalr
+----------
+values = String with a message associated with the transaction in general
+
+
+
+Contacts Based status
+======================
+Any other array element in the response is the status of each contacts sending transaction, for each contact, the returned array for that contact has the following fields
+
+record
+--------
+values = Serial number of the transaction queue
+
+contact
+----------
+value = associated contact number for this transaction
+
+returncode
+--------------
+In this section, any code different from one should be reported to the whisper team under help of the platform. A whisper expert will attend to you.
+
+values = 
+1 //message was sent successfully
+100 //The airtime got finished somehow when processing request for this contact
+404 //Wrong platform credentials
+0 //General network problem
+-500 //Slow or internet connection bandwidth too low
+Any other code means unknow error occurred
+
+
 
