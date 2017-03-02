@@ -1,62 +1,6 @@
 # Sample API Function call
 ```
-public function actionApitest() {
-/*
-
-Response vars
-
-genreplystatus
--------------------- 
-values = 
-0 //No problems
-500 //Unknown error
-600 //credit finished
-700 //Contacts List supplied is empty
-800 //Internal server error
-900 //Wrong login
-
-minireplystatus
----------------------
-values = 
--11 //Not enough airtime
--21 //No sender ID supplied
-
-balance
------------
-value = current balance airtime
-
-
-generalr
-----------
-values = String with a message associated with the transaction in general
-
-
-
-Contacts Based status
-======================
-Any other array element in the response is the status of each contacts sending transaction, for each contact, the returned array for that contact has the following fields
-
-record
---------
-values = Serial number of the transaction queue
-
-contact
-----------
-value = associated contact number for this transaction
-
-returncode
---------------
-In this section, any code different from one should be reported to the whisper team under help of the platform. A whisper expert will attend to you.
-
-values = 
-1 //message was sent successfully
-100 //The airtime got finished somehow when processing request for this contact
-404 //Wrong platform credentials
-0 //General network problem
--500 //Slow or internet connection bandwidth too low
-Any other code means unknow error occurred
-
-*/
+public function methodCall() {
      //sendsms code
         //CURL
         $url = 'http://whisper.ngtltd.com/index.php?r=site/apiwebsendmsg&';
