@@ -39,50 +39,7 @@ public function methodCall() {
 
         //additionally, you can do $k->contactnumber
         exit;
-        //return $response;
-        
-        
-        
-        /*
-        
-        $url = 'http://whisper.ngtltd.com/index.php?r=site/apiwebsendmsg' ;
-
-        $verification_code = rand(1000,9999);
-        $phone = "670879560";
-
-        $fields = array(
-            'phoneNumber' => '+237670000000',
-            'Password'    => 'test',
-            'msg'         => "Hello World: " . $verification_code,
-            '237'         => $phone
-        ) ;
-
-        $fields_string = "" ;
-
-        //Now we url-ify the data in the array
-        foreach ($fields as $key => $value) {
-            $fields_string .= "&".$key . "=".$value ;
-        }
-
-        rtrim($fields_string,'&') ;
-        
-        
-        
-        //Open connection
-        $curl_connection = curl_init();
-
-        curl_setopt($curl_connection, CURLOPT_URL, $url) ;
-        curl_setopt($curl_connection, CURLOPT_POST, count($fields)) ;
-        curl_setopt($curl_connection, CURLOPT_POSTFIELDS, $fields_string) ;
-        
-        #var_dump($url);exit;
-        
-        //Call service to send message
-        $result = curl_exec($curl_connection) ;
-
-        var_dump($result);
-
-        curl_close($curl_connection) ;*/
+        //return $response; 
     }
 
 
