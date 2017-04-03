@@ -6,11 +6,12 @@ public function methodCall() {
         $url = 'http://whisper.ngtltd.com/index.php?r=site/apiwebsendmsg&';
         $username = '+237670000000';
         $password = md5('test');
+        $sender_id = "ABC Ltd"; // This is optional field // If you wish to override default sender id, then set this field
         $verification_code = rand(1000,9999);
         $receiver = "670879560";//696449761
         //$timeout=10;
         $request = $url . "phoneNumber=" . urlencode($username) . "&Password=" . $password;
-        $request.="&msg=" . urlencode("Hello World: " . $verification_code) . "&237=" . urlencode($receiver);
+        $request.="&msg=" . urlencode("Hello World: " . $verification_code) . "&237=" . urlencode($receiver). "&sender_id=" . urlencode($sender_id);
 
         $url = $request;
         $ch = curl_init();
@@ -64,7 +65,11 @@ Password = Online account password
 
 msg = Message to be sent
 ```
-
+## Fileds optional in the post array are;
+================
+```
+$sender_id = This is optional field, If you wish to override default sender id, then set this field
+```
 ## There rest of the POST array should hold the contacts as;
 =========================================================
 ```
