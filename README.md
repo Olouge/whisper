@@ -4,14 +4,13 @@
 
 [Skip to Sample code section](#sample-code)
 
-## To send an sms to a set of contacts, do a POST call
-===================================================
+## To send an sms to a set of contacts, do a POST call to;
+============================================================
 ```
 https://api.smsechos.com/index.php?r=site/apiwebsendmsg
 ```
 
 ## Fields required in the post array are;
-=====================================
 ```
 phoneNumber = Online account Login. Attach country code to it.
 
@@ -19,13 +18,11 @@ Password = Online account password
 
 msg = Message to be sent
 ```
-## Fileds optional in the post array are;
-================
+## Fields optional in the post array are;
 ```
 $sender_id = This is optional field, If you wish to override default sender id, then set this field
 ```
 ## There rest of the POST array should hold the contacts as;
-=========================================================
 ```
 country code=contact number
 ```
@@ -33,9 +30,9 @@ For example assuming I have to send SMS to (237)650218839 and (237)670879560, al
 
 ```
 https://api.smsechos.com/index.php?r=site/apiwebsendmsg&phoneNumber=2371111111111&Password=1234&msg=Hello World&237=650218839&237=670879560
-
-And POST array will be received by WHISPER API like this,
-
+```
+And POST array will be received by our API like this,
+```
 POST['phoneNumber'] = 2371111111111
 POST['Password'] = 1234
 POST['msg'] =  Hello World
@@ -46,14 +43,14 @@ POST['237'] = 670879560
 The rest will be handled by the API.
 
 ## Response After Call;
-=======================================================
+
 
 JSON encoded 2 dimensional array containing history of how message was handled for each contact. The first dimension holds an array of status for each contact. The following information can be gotten out of the array:
 
 For the above example call, something like this for the response $rep can be gotten like this,
 
 ### For contact 650218839 for example
----------------------------------
+
 ```
 record = 237
 returnstatus = 0 means did not go well and 1 means went well
@@ -68,7 +65,6 @@ success = True meaning it was successful for this current contact or False meani
 ```
 
 ### Conditional status codes
-----------------------------------
 ```
 unknownstatus = this is set when an error 500 above is set
 success = set when message went or never went well
@@ -79,8 +75,8 @@ ise = set when API throws an error
 
 ### Response vars
 
-genreplystatus
--------------------- 
+- genreplystatus
+
 values = 
 0 //No problems
 500 //Unknown error
@@ -89,37 +85,37 @@ values =
 800 //Internal server error
 900 //Wrong login
 
-minireplystatus
----------------------
+- minireplystatus
+
 values = 
 -11 //Not enough airtime
 -21 //No sender ID supplied
 
-balance
------------
+- balance
+
 value = current balance airtime
 
 
-generalr
-----------
+- generalr
+
 values = String with a message associated with the transaction in general
 
 
 
-Contacts Based status
-======================
+### Contacts Based status
+
 Any other array element in the response is the status of each contacts sending transaction, for each contact, the returned array for that contact has the following fields
 
-record
---------
+- record
+
 values = Serial number of the transaction queue
 
-contact
-----------
+- contact
+
 value = associated contact number for this transaction
 
-returncode
---------------
+- returncode
+
 In this section, any code different from one should be reported to the whisper team under help of the platform. A whisper expert will attend to you.
 
 values = 
@@ -132,6 +128,7 @@ Any other code means unknow error occurred
 {: id="sample-code"}
 # Sample API Function call 
 {#sample-code}
+
 ```
 public function methodCall() {
      //sendsms code
@@ -175,3 +172,4 @@ public function methodCall() {
         exit;
         //return $response; 
     }
+```
