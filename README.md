@@ -1,54 +1,9 @@
-# Sample API Function call
-```
-public function methodCall() {
-     //sendsms code
-        //CURL
-        $url = 'https://api.smsechos.com/index.php?r=site/apiwebsendmsg&';
-        $username = '+237670000000';
-        $password = md5('test');
-        $sender_id = "ABC Ltd"; // This is optional field // If you wish to override default sender id, then set this field
-        $verification_code = rand(1000,9999);
-        $receiver = "670879560";//696449761
-        //$timeout=10;
-        $request = $url . "phoneNumber=" . urlencode($username) . "&Password=" . $password;
-        $request.="&msg=" . urlencode("Hello World: " . $verification_code) . "&237=" . urlencode($receiver). "&sender_id=" . urlencode($sender_id);
-
-        $url = $request;
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        //curl_setopt($ch, CURLOPT_POST, 1);
-
-        $response = curl_exec($ch);
-        curl_close($ch);
-
-        $response = json_decode($response);
-        foreach($response as $k){
-            if(isset($k->success))            
-                echo $k->success;
-            if(isset($k->genreplystatus))
-                echo $k->genreplystatus;
-            if(isset($k->minireplystatus))
-                echo $k->minireplystatus;
-            if(isset($k->balance))
-                echo $k->balance;
-            if(isset($k->generalreason))
-                echo $k->generalreason;
-            if(is_object($k) && isset($k->contact))
-                var_dump($k);
-        }
-
-        //additionally, you can do $k->contactnumber
-        exit;
-        //return $response; 
-    }
-
 
 ```
-# Documentation for WHISPER BULK SMS API
+# Documentation for SMSECHOS BULK SMS API
 ===============================================================
 
-- To be able to use this API, it is recommended you create an account at whisper.ngtltd.com
+- To be able to use this API, it is recommended you create an account at https://api.smsechos.com
  
 ## To send an sms to a set of contacts, do a POST call
 ===================================================
@@ -94,7 +49,7 @@ The rest will be handled by the API.
 ## Response After Call;
 =======================================================
 
-JSON ecoded 2 dimensional array containing history of how message was handled for each contact. The first dimension holds an array of status for each contact. The following information can be gotten out of the array:
+JSON encoded 2 dimensional array containing history of how message was handled for each contact. The first dimension holds an array of status for each contact. The following information can be gotten out of the array:
 
 For the above example call, something like this for the response $rep can be gotten like this,
 
@@ -175,3 +130,48 @@ values =
 0 //General network problem
 -500 //Slow or internet connection bandwidth too low
 Any other code means unknow error occurred
+
+# Sample API Function call
+```
+public function methodCall() {
+     //sendsms code
+        //CURL
+        $url = 'https://api.smsechos.com/index.php?r=site/apiwebsendmsg&';
+        $username = '+237670000000';
+        $password = md5('test');
+        $sender_id = "ABC Ltd"; // This is optional field // If you wish to override default sender id, then set this field
+        $verification_code = rand(1000,9999);
+        $receiver = "670879560";//696449761
+        //$timeout=10;
+        $request = $url . "phoneNumber=" . urlencode($username) . "&Password=" . $password;
+        $request.="&msg=" . urlencode("Hello World: " . $verification_code) . "&237=" . urlencode($receiver). "&sender_id=" . urlencode($sender_id);
+
+        $url = $request;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        //curl_setopt($ch, CURLOPT_POST, 1);
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        $response = json_decode($response);
+        foreach($response as $k){
+            if(isset($k->success))            
+                echo $k->success;
+            if(isset($k->genreplystatus))
+                echo $k->genreplystatus;
+            if(isset($k->minireplystatus))
+                echo $k->minireplystatus;
+            if(isset($k->balance))
+                echo $k->balance;
+            if(isset($k->generalreason))
+                echo $k->generalreason;
+            if(is_object($k) && isset($k->contact))
+                var_dump($k);
+        }
+
+        //additionally, you can do $k->contactnumber
+        exit;
+        //return $response; 
+    }
