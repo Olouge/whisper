@@ -2,6 +2,8 @@
 ===============================================================
 - To be able to use this API, it is recommended you create an account at https://api.smsechos.com
 
+[Skip to Sample code section](#sample-code)
+
 ## To send an sms to a set of contacts, do a POST call
 ===================================================
 ```
@@ -128,7 +130,7 @@ values =
 -500 //Slow or internet connection bandwidth too low
 Any other code means unknow error occurred
 
-# Sample API Function call
+# Sample API Function call {#sample-code}
 ```
 public function methodCall() {
      //sendsms code
