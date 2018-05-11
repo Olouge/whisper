@@ -3,7 +3,7 @@
 public function methodCall() {
      //sendsms code
         //CURL
-        $url = 'http://whisper.ngtltd.com/index.php?r=site/apiwebsendmsg&';
+        $url = 'https://api.smsechos.com/index.php?r=site/apiwebsendmsg&';
         $username = '+237670000000';
         $password = md5('test');
         $sender_id = "ABC Ltd"; // This is optional field // If you wish to override default sender id, then set this field
@@ -53,7 +53,7 @@ public function methodCall() {
 ## To send an sms to a set of contacts, do a POST call
 ===================================================
 ```
-whisper.ngtltd.com/index.php?r=site/apiwebsendmsg
+https://api.smsechos.com/index.php?r=site/apiwebsendmsg
 ```
 
 ## Fields required in the post array are;
@@ -78,7 +78,7 @@ country code=contact number
 For example assuming I have to send SMS to (237)650218839 and (237)670879560, also assuming my online account phone number is 1111111111 with country code 237 and password is 1234 and message is "Hello World". Then using any approach to do the POST call (CURL, AJAX, etc) my URL for the call should be formed to look like this,
 
 ```
-whisper.ngtltd.com/index.php?r=site/apiwebsendmsg&phoneNumber=2371111111111&Password=1234&msg=Hello World&237=650218839&237=670879560
+https://api.smsechos.com/index.php?r=site/apiwebsendmsg&phoneNumber=2371111111111&Password=1234&msg=Hello World&237=650218839&237=670879560
 
 And POST array will be received by WHISPER API like this,
 
@@ -175,6 +175,3 @@ values =
 0 //General network problem
 -500 //Slow or internet connection bandwidth too low
 Any other code means unknow error occurred
-
-
-
