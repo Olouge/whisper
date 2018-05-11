@@ -1,10 +1,7 @@
-
-```
 # Documentation for SMSECHOS BULK SMS API
 ===============================================================
-
 - To be able to use this API, it is recommended you create an account at https://api.smsechos.com
- 
+
 ## To send an sms to a set of contacts, do a POST call
 ===================================================
 ```
