@@ -129,8 +129,9 @@ values =
 0 //General network problem
 -500 //Slow or internet connection bandwidth too low
 Any other code means unknow error occurred
-
-# Sample API Function call {#sample-code}
+{: id="sample-code"}
+# Sample API Function call 
+{#sample-code}
 ```
 public function methodCall() {
      //sendsms code
