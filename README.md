@@ -1,16 +1,17 @@
 # Documentation for SMSECHOS BULK SMS API
-===============================================================
-- To be able to use this API, it is recommended you create an account at https://api.smsechos.com
+
+- To be able to use this API, it is recommended you create an account at [https://api.smsechos.com](https://api.smsechos.com)
 
 [Skip to Sample code section](#sample-code)
 
-## To send an sms to a set of contacts, do a POST call to;
-============================================================
+## To send an sms to a set of contacts, do a POST call to
+
 ```
 https://api.smsechos.com/index.php?r=site/apiwebsendmsg
 ```
 
-## Fields required in the post array are;
+## Fields required in the post array are
+
 ```
 phoneNumber = Online account Login. Attach country code to it.
 
