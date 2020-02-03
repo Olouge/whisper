@@ -78,19 +78,19 @@ ise = set when API throws an error
 
 - genreplystatus
 
-values = 
-0 //No problems
-500 //Unknown error
-600 //credit finished
-700 //Contacts List supplied is empty
-800 //Internal server error
-900 //Wrong login
+values = <br>
+0 //Success, No problems<br>
+500 //Unknown error<br>
+600 //credit finished<br>
+700 //Contacts List supplied is empty<br>
+800 //Internal server error <br>
+900 //Wrong login<br>
 
 - minireplystatus
 
-values = 
--11 //Not enough airtime
--21 //No sender ID supplied
+values = <br>
+-11 //Not enough airtime <br>
+-21 //No sender ID supplied <br>
 
 - balance
 
