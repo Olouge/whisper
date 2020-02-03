@@ -1,6 +1,6 @@
 # Documentation for SMSECHOS BULK SMS API
 
-- To be able to use this API, it is recommended you create an account at [https://api.smsechos.com](https://api.smsechos.com)
+- To be able to use this API, it is recommended you create an account at [https://api.smsechos.com](https://api.smsechos.com) but if you have an account on [https://api.smsechos.com](https://api.smsechos.com) or [https://smsechos.com](https://smsechos.com) then you can use it for your API calls.
 
 [Skip to Sample code section](#sample-code)
 
