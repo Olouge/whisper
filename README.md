@@ -24,21 +24,34 @@ msg = Message to be sent
 $sender_id = This is optional field, If you wish to override default sender id, then set this field
 ```
 ## There rest of the POST array should hold the contacts as;
+### When sending to multiple contacts
+```
+SerialNumber-country code=contact number
+```
+### When sending to one contact
+```
+SerialNumber-country code=contact number
+```
+OR
 ```
 country code=contact number
 ```
+Will work
+
 For example assuming I have to send SMS to (237)650218839 and (237)670879560, also assuming my online account phone number is 1111111111 with country code 237 and password is 1234 and message is "Hello World". Then using any approach to do the POST call (CURL, AJAX, etc) my URL for the call should be formed to look like this,
 
 ```
-https://api.smsechos.com/index.php?r=site/apiwebsendmsg&phoneNumber=2371111111111&Password=1234&msg=Hello World&237=650218839&237=670879560
+https://api.smsechos.com/index.php?r=site/apiwebsendmsg&phoneNumber=2371111111111&Password=1234&msg=Hello World&1-237=650218839&2-237=670879560
 ```
+Notice each country code is preceded by a sequential number, 1, 2, etc. Without this sequential number separated using - from the country code might lead to unreliable results. But if sending only to a single contact, only country code will suffice but if you set it up as 1-country code=number for the single number it will work fine.
+
 And POST array will be received by our API like this,
 ```
 POST['phoneNumber'] = 2371111111111
 POST['Password'] = 1234
 POST['msg'] =  Hello World
-POST['237'] = 650218839
-POST['237'] = 670879560
+POST['1-237'] = 650218839
+POST['2-237'] = 670879560
 ```
 
 The rest will be handled by the API.
