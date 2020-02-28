@@ -36,7 +36,7 @@ OR
 ```
 country code=contact number
 ```
-Will work
+Will work fine. Note the serial number in this case are sequential integers you will generate at your end.
 
 For example assuming I have to send SMS to (237)650218839 and (237)670879560, also assuming my online account phone number is 1111111111 with country code 237 and password is 1234 and message is "Hello World". Then using any approach to do the POST call (CURL, AJAX, etc) my URL for the call should be formed to look like this,
 
