@@ -2,6 +2,79 @@
 
 - To be able to use this API, it is recommended you create an account at [https://api.smsechos.com](https://api.smsechos.com) but if you have an account on [https://api.smsechos.com](https://api.smsechos.com) or [https://smsechos.com](https://smsechos.com) then you can use it for your API calls.
 
+## Special Character Support
+
+                    <table class="table">
+                        <tr>
+                            <th> Special Character</th>
+                            <th> Meaning</th>
+                            <th> Auto Encoded by smsechos.com</th>
+                        </tr>
+                        <tr>
+                            <td>\r</td>
+                            <td>Carraige Return</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>\n</td>
+                            <td>Newline</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>#</td>
+                            <td>Hash or Number sign</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>Asterisk</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>@</td>
+                            <td>At sign</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Percent sign</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>"</td>
+                            <td>Quote marks</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>'</td>
+                            <td>Apostrophe</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>$</td>
+                            <td>Dollar sign</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>?</td>
+                            <td>Question mark</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>!</td>
+                            <td>Exclamation mark</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>=</td>
+                            <td>Equals sign</td>
+                            <td>Yes</td>
+                        </tr>
+                    </table>
+                    <div class="alert alert-warning">If a symbol is not listed above, then you have to manually insert its code into your <br>
+                        SMS following the GSM 3.38 coding standard here <a href="https://en.wikipedia.org/wiki/GSM_03.38" target="_blank">https://en.wikipedia.org/wiki/GSM_03.38</a> or any other source. Remember codes are preceded with a % for example # symbol is %23 and @ symbol is %00 <br> If you have doubts, write customer support.</div>
+
+
 [Skip to Sample code section](#sample-code)
 
 ## To send an sms to a set of contacts, do a POST call to
