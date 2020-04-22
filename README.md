@@ -21,7 +21,6 @@
 
 If a symbol is not listed above, then you have to manually insert its code into your SMS following the GSM 3.38 coding standard here <a href="https://en.wikipedia.org/wiki/GSM_03.38" target="_blank">https://en.wikipedia.org/wiki/GSM_03.38</a> or any other source. Remember codes are preceded with a % for example # symbol is %23 and @ symbol is %00 If you have doubts, write customer support.
 
-
 [Skip to Sample code section](#sample-code)
 
 ## To send an sms to a set of contacts, do a POST call to
