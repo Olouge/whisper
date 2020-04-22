@@ -13,59 +13,18 @@
 |-------------------|:-------:|-----------------------------:|
 | \r                | Carraige Return| Yes |
 | \n                | Newline | Yes  |   
+| # | Hash or Number sign | Yes |
+| * | Asterisk | Yes | 
+| @ | At sign | Yes | 
+| % | Percent sign| Yes |
+| " | Quote marks | Yes |
+| ' | Apostrophe | Yes |
+| $ | Dollar sign |Yes |
+| ? | Question mark | Yes |
+| ! | Exclamation mark | Yes |
+| = | Equals sign | Yes |
 
-<td>#</td>
-                            <td>Hash or Number sign</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr>
-                            <td>*</td>
-                            <td>Asterisk</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr>
-                            <td>@</td>
-                            <td>At sign</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr>
-                            <td>%</td>
-                            <td>Percent sign</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr>
-                            <td>"</td>
-                            <td>Quote marks</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr>
-                            <td>'</td>
-                            <td>Apostrophe</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr>
-                            <td>$</td>
-                            <td>Dollar sign</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr>
-                            <td>?</td>
-                            <td>Question mark</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr>
-                            <td>!</td>
-                            <td>Exclamation mark</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr>
-                            <td>=</td>
-                            <td>Equals sign</td>
-                            <td>Yes</td>
-                        </tr>
-                    </table>
-                    <div class="alert alert-warning">If a symbol is not listed above, then you have to manually insert its code into your <br>
-                        SMS following the GSM 3.38 coding standard here <a href="https://en.wikipedia.org/wiki/GSM_03.38" target="_blank">https://en.wikipedia.org/wiki/GSM_03.38</a> or any other source. Remember codes are preceded with a % for example # symbol is %23 and @ symbol is %00 <br> If you have doubts, write customer support.</div>
+If a symbol is not listed above, then you have to manually insert its code into your SMS following the GSM 3.38 coding standard here <a href="https://en.wikipedia.org/wiki/GSM_03.38" target="_blank">https://en.wikipedia.org/wiki/GSM_03.38</a> or any other source. Remember codes are preceded with a % for example # symbol is %23 and @ symbol is %00 If you have doubts, write customer support.
 
 
 [Skip to Sample code section](#sample-code)
